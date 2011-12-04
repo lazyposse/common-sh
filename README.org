@@ -1,0 +1,3 @@
+#!/bin/bash -xe
+
+Common Shell scripts for everyday use
