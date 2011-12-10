@@ -1,3 +1,24 @@
-#!/bin/bash -xe
+#+TITLE: common-sh
+#+STARTUP: indent
+#+STARTUP: hidestars odd
 
 Common Shell scripts for everyday use
+
+* =install-google-chrome.sh=
+
+*** Why? 
+
+- Installing chrome on a new Ubuntu system is laborious: download it,
+  enable the right repos, get gdebi, ...
+
+- This script automate that
+
+*** Example
+
+#+BEGIN_SRC sh
+wget https://raw.github.com/denlab/common-sh/master/install-chrome.sh
+
+chmod +x install-chrome.sh
+
+./install-chrome.sh
+#+END_SRC
