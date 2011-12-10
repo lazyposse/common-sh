@@ -18,7 +18,7 @@ sudo apt-get install gdebi
 
 sudo gdebi google-chrome-stable_current_i386.deb
 
-google-chrome
+google-chrome --version
 
 
 
