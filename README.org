@@ -4,7 +4,7 @@
 
 Common Shell scripts for everyday use
 
-* =install-google-chrome.sh=
+* install-google-chrome.sh
 
 *** Why? 
 
