@@ -32,6 +32,6 @@ done
 
 sudo apt-get update
 
-sudo apt-get install emacs-snapshot
+yes | sudo apt-get install emacs-snapshot
 
 emacs --version
