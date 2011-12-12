@@ -6,11 +6,10 @@
 #
 ###############################################################################
 
-sudo apt-get install python-software-properties
+UBUNTU_VERSION=$1
 
-sudo add-apt-repository ppa:cassou/emacs
-
-
-
-
-
+if [ -z $UBUNTU_VERSION ]
+then
+  set +x;
+  echo "Usage: $(basename $0) <ubuntu_version_name_(ex:oniric)>";
+  echo;
