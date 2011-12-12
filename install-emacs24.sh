@@ -22,10 +22,13 @@ sudo add-apt-repository ppa:cassou/emacs
 
 SRC=/etc/apt/sources.list
 
-sudo echo                                                                               >> $SRC
-sudo echo "# For emacs 24"                                                              >> $SRC
-sudo echo "deb http://ppa.launchpad.net/cassou/emacs/ubuntu $UBUNTU_VERSION main "      >> $SRC
-sudo echo "deb-src http://ppa.launchpad.net/cassou/emacs/ubuntu $UBUNTU_VERSION main "  >> $SRC
+for I in ""                                                                            \
+         "# For emacs 24"                                                              \
+         "deb http://ppa.launchpad.net/cassou/emacs/ubuntu $UBUNTU_VERSION main "      \
+         "deb-src http://ppa.launchpad.net/cassou/emacs/ubuntu $UBUNTU_VERSION main "
+do 
+  sudo bash -c "echo $I >> $SRC"
+done
 
 sudo apt-get update
 
