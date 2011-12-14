@@ -14,6 +14,7 @@ then
   echo;
   echo "Usage: $(basename $0) <ubuntu_version_name_(ex:oniric)>";
   echo;
+  exit 1;
 fi
 
 sudo apt-get install python-software-properties
