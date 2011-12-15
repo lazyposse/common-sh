@@ -6,13 +6,15 @@
 #
 ###############################################################################
 
-UBUNTU_VERSION=$1
+BASEDIR=$(dirname $0)
+
+UBUNTU_VERSION=$("$BASEDIR"/ubuntu-version-name.sh)
 
 if [ -z $UBUNTU_VERSION ]
 then
   set +x;
   echo;
-  echo "Usage: $(basename $0) <ubuntu_version_name_(ex:oniric)>";
+  echo "Sorry, can't find your ubuntu version name, exiting ...";
   echo;
   exit 1;
 fi
