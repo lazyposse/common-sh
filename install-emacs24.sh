@@ -39,6 +39,15 @@ yes | sudo apt-get install emacs-snapshot
 
 emacs --version
 
-emacs -e package-refresh-contents
+DST=~/.emacs.d/init.el
+for I in '(require '\''package)'                                     \
+         '(add-to-list \''package-archives'                          \
+         \''("marmalade" . "http://marmalade-repo.org/packages/") t)'\
+         '(package-initialize)'
+do 
+    echo $I >> $DST;
+done
 
-emacs -e (package-install "starter-kit")
+emacs --batch -e package-refresh-contents
+
+emacs --bach -e (package-install "starter-kit")
