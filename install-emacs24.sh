@@ -36,3 +36,7 @@ sudo apt-get update
 yes | sudo apt-get install emacs-snapshot
 
 emacs --version
+
+emacs -e package-refresh-contents
+
+emacs -e (package-install "starter-kit")
