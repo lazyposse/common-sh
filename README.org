@@ -22,3 +22,23 @@ chmod +x install-chrome.sh
 
 ./install-chrome.sh
 #+END_SRC
+
+* install-emacs24.sh
+
+*** Why? 
+
+- Installing Emacs24 a new Ubuntu system is laborious: trust the ppa,
+  add the ppa, update the sourcse, ...
+
+
+- This script automate that
+
+*** Example
+
+#+BEGIN_SRC sh
+wget https://raw.github.com/denlab/common-sh/master/install-emacs24.sh
+
+chmod +x install-emacs24.sh
+
+./install-emacs24.sh
+#+END_SRC
