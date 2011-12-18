@@ -36,14 +36,25 @@ yes | sudo apt-get install emacs-snapshot
 
 emacs --version
 
-DST=~/.emacs.d/init.el
-for I in '(require '\''package)'                                     \
-         '(add-to-list '\''package-archives'                         \
-         \''("marmalade" . "http://marmalade-repo.org/packages/") t)'\
-         '(package-initialize)'
-do 
-    echo $I >> $DST;
-done
+EM_DIR=~/.emacs.d
+if [ -e $EM_DIR ]
+then
+  set +x;
+  echo;
+  echo "$EM_DIR already exists !!! Looks like you already have an Emacs installation";
+  echo "Delete $EM_DIR to proceed";
+  echo "exiting ...";
+  echo;
+  exit 1;
+fi
+
+mkdir $EM_DIR
+tee "$EM_DIR"/init.el <<EOF
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
+EOF
 
 emacs --batch -e package-refresh-contents
 
