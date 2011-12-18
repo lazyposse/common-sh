@@ -23,15 +23,12 @@ sudo apt-get install python-software-properties
 
 sudo add-apt-repository ppa:cassou/emacs
 
-SRC=/etc/apt/sources.list
+sudo tee -a /etc/apt/sources.list <<EOF
 
-for I in ""                                                                            \
-         "# For emacs 24"                                                              \
-         "deb http://ppa.launchpad.net/cassou/emacs/ubuntu $UBUNTU_VERSION main "      \
-         "deb-src http://ppa.launchpad.net/cassou/emacs/ubuntu $UBUNTU_VERSION main "
-do 
-  sudo bash -c "echo $I >> $SRC"
-done
+# For Emacs 24
+deb http://ppa.launchpad.net/cassou/emacs/ubuntu $UBUNTU_VERSION main
+deb-src http://ppa.launchpad.net/cassou/emacs/ubuntu $UBUNTU_VERSION main
+EOF
 
 sudo apt-get update
 
