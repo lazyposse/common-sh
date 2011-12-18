@@ -56,6 +56,7 @@ tee "$EM_DIR"/init.el <<EOF
 (package-initialize)
 EOF
 
-emacs --batch -e package-refresh-contents
+emacs -rv -fs -eval '(progn (package-refresh-contents)        \
+                            (package-install '\''starter-kit) \
+                            (save-buffers-kill-terminal))'
 
-emacs --bach -e (package-install "starter-kit")
