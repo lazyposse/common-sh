@@ -37,7 +37,7 @@ chmod +x install-chrome.sh
 
 #+BEGIN_SRC sh
 wget https://raw.github.com/denlab/common-sh/master/install-emacs24.sh
-
+wget https://raw.github.com/denlab/common-sh/master/ubuntu-version-name.sh
 chmod +x install-emacs24.sh
 
 ./install-emacs24.sh

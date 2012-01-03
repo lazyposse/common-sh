@@ -54,7 +54,18 @@ tee "$EM_DIR"/init.el <<EOF
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
+
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+;; Add in your own as you wish:
+(defvar my-packages '(starter-kit starter-kit-bindings clojure-mode midje-mode multi-term auto-complete switch-window slime)
+  "A list of packages to ensure are installed at launch.")
+
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
 EOF
 
-emacs -rv -fs -eval '(progn (package-refresh-contents) (package-install '\''starter-kit) (save-buffers-kill-terminal))'
 
