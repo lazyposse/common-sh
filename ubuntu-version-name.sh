@@ -27,7 +27,7 @@ version[11.04]=natty
 version[11.10]=oneiric
 version[12.04]=precise
 
-V_NUM=$(cat /etc/issue | cut -f2 -d' ')
+source /etc/lsb-release
 
-echo ${version[$V_NUM]}
+echo ${version[$DISTRIB_RELEASE])}
 
