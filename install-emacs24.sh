@@ -37,15 +37,22 @@ yes | sudo apt-get install emacs-snapshot
 emacs --version
 
 EM_DIR=~/.emacs.d
+EM_BAK="$EM_DIR""-"$(date +%F-%Hh%Mm%Ss)
 if [ -e $EM_DIR ]
 then
   set +x;
   echo;
   echo "$EM_DIR already exists !!! Looks like you already have an Emacs installation";
-  echo "Delete $EM_DIR to proceed";
-  echo "exiting ...";
   echo;
-  exit 1;
+  echo "    Do you want to archive $EM_DIR to $EM_BAK?";
+  select YN in yes no;
+  do 
+      if [ $YN = "yes" ]; 
+          then mv -v "$EM_DIR" "$EM_BAK"; break;
+          else echo "Exiting..."        ; exit 1;
+      fi
+  done
+  echo;
 fi
 
 mkdir $EM_DIR
