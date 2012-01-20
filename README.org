@@ -47,3 +47,28 @@ chmod +x ./install-emacs24.sh
 ./install-emacs24.sh
 
 #+END_SRC
+
+
+
+git-upstream-sync.sh
+install-chrome.sh
+install-emacs24.sh
+README.org
+
+
+* git-upstream-sync.sh
+
+** Why?
+
+- Syncing a fork with the main repo is repetitive
+
+- This script automate that
+
+** Usage
+
+#+BEGIN_SRC sh
+cd fork-dir
+git-upstream-sync.sh
+#+END_SRC
+
+
