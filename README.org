@@ -1,45 +1,49 @@
-#+TITLE: common-sh
 #+STARTUP: indent
-#+STARTUP: hidestars odd
 
 Common Shell scripts for everyday use
 
-* install-google-chrome.sh
+* install-chrome.sh
 
-*** Why? 
+** Why? 
 
 - Installing chrome on a new Ubuntu system is laborious: download it,
   enable the right repos, get gdebi, ...
 
 - This script automate that
 
-*** Example
+** Usage
 
 #+BEGIN_SRC sh
 wget https://raw.github.com/denlab/common-sh/master/install-chrome.sh
-
 chmod +x install-chrome.sh
-
 ./install-chrome.sh
+
 #+END_SRC
 
 * install-emacs24.sh
 
-*** Why? 
+** Why? 
 
-- Installing Emacs24 a new Ubuntu system is laborious: trust the ppa,
-  add the ppa, update the sourcse, ...
-
+- Installing Emacs24 a new Ubuntu system is laborious: trust the PPA,
+  add the PPA, update the sources, ...
 
 - This script automate that
 
-*** Example
+** What does it do?
+
+- Add a new repo and PPA for Emacs 24 snapshot
+
+- Install Emacs 24 snapshot
+
+- Install [[https://github.com/technomancy/emacs-starter-kit][emacs-starter-kit]]
+
+- Setup [[https://github.com/technomancy/emacs-starter-kit][emacs-starter-kit]] (in particular it setup [[https://github.com/technomancy/clojure-mode][clojure-mode]])
+
+** Usage
 
 #+BEGIN_SRC sh
 wget https://raw.github.com/denlab/common-sh/master/install-emacs24.sh
-wget https://raw.github.com/denlab/common-sh/master/ubuntu-version-name.sh
 chmod +x ./install-emacs24.sh
-chmod +x ./ubuntu-version-name.sh
-
 ./install-emacs24.sh
+
 #+END_SRC
