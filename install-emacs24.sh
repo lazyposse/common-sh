@@ -6,11 +6,11 @@
 #
 ###############################################################################
 
+source /etc/lsb-release
+
 BASEDIR=$(dirname $0)
 
-UBUNTU_VERSION=$("$BASEDIR"/ubuntu-version-name.sh)
-
-if [ -z $UBUNTU_VERSION ]
+if [ -z $DISTRIB_CODENAME ]
 then
   set +x;
   echo;
@@ -26,8 +26,8 @@ sudo add-apt-repository ppa:cassou/emacs
 sudo tee -a /etc/apt/sources.list <<EOF
 
 # For Emacs 24
-deb http://ppa.launchpad.net/cassou/emacs/ubuntu $UBUNTU_VERSION main
-deb-src http://ppa.launchpad.net/cassou/emacs/ubuntu $UBUNTU_VERSION main
+deb http://ppa.launchpad.net/cassou/emacs/ubuntu $DISTRIB_CODENAME main
+deb-src http://ppa.launchpad.net/cassou/emacs/ubuntu $DISTRIB_CODENAME main
 EOF
 
 sudo apt-get update
