@@ -20,6 +20,7 @@ chmod +x install-chrome.sh
 
 #+END_SRC
 
+
 * install-emacs24.sh
 
 ** Why? 
@@ -42,7 +43,7 @@ chmod +x install-chrome.sh
 ** Usage
 
 #+BEGIN_SRC sh
-wget https://raw.github.com/denlab/common-sh/master/install-emacs24.sh
+wget https://raw.github.com/clojure-consulting/common-sh/master/install-emacs24.sh
 chmod +x ./install-emacs24.sh
 ./install-emacs24.sh
 
