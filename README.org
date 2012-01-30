@@ -49,14 +49,6 @@ chmod +x ./install-emacs24.sh
 
 #+END_SRC
 
-
-
-git-upstream-sync.sh
-install-chrome.sh
-install-emacs24.sh
-README.org
-
-
 * git-upstream-sync.sh
 
 ** Why?
