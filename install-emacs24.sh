@@ -73,6 +73,9 @@ tee "$EM_DIR"/init.el <<EOF
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; font 
+(set-default-font "Inconsolata-11")
+
 EOF
 
 
