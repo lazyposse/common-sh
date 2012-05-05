@@ -57,6 +57,10 @@ fi
 
 mkdir $EM_DIR
 tee "$EM_DIR"/init.el <<EOF
+;; ===================================================================
+;;                             Package Manager
+;; ===================================================================
+
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -73,8 +77,57 @@ tee "$EM_DIR"/init.el <<EOF
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; ===================================================================
+;;                             General
+;; ===================================================================
+
 ;; font 
 (set-default-font "Inconsolata-11")
+
+;; ===================================================================
+;;                             org-mode
+;; ===================================================================
+
+;; org dir
+
+(setq org-directory "~/org")
+
+;; indentation
+
+(setq org-startup-indented t)
+
+;; log work done
+
+(setq org-log-done 'time)
+
+;; tags
+
+(setq org-tag-alist '(("howTo" . ?h)
+                      ("tech" . ?t)
+                      ("emacs" . ?e)
+                      ("orgMode" . ?o)
+                      ("faq" . ?f)
+                      ("firefox")
+                      ("conkeror")
+                      ("linux")))
+
+;; ===================================================================
+;;                              slime
+;; ===================================================================
+
+;; prevent slime to crash when encountering non ascii char
+
+(set-language-environment "UTF-8") 
+(setq slime-net-coding-system 'utf-8-unix) 
+
+;; ===================================================================
+;;                            multi-term
+;; ===================================================================
+
+;; set shortcut for line mode in terminal
+
+(global-set-key (kbd "C-c C-j") 'term-line-mode)
+
 
 EOF
 
