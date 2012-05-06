@@ -111,6 +111,9 @@ tee "$EM_DIR"/init.el <<EOF
                       ("conkeror")
                       ("linux")))
 
+(setq org-todo-keywords
+'((sequence "TODO" "IN-PROGRESS" "PENDING" "|" "DONE" "FAIL" "DELEGATED" "CANCELLED")))
+
 ;; ===================================================================
 ;;                              slime
 ;; ===================================================================
