@@ -132,12 +132,13 @@ tee "$EM_DIR"/init.el <<EOF
 (global-set-key (kbd "C-c C-j") 'term-line-mode)
 
 ;; ===================================================================
-;;                           dwim-fold
+;;                      dwim-fold (outline in emacs)
 ;; ===================================================================
 
-;; allow to easily toggle block visibility with C-c j
-;;                 hide all                with C-c l
-;;                 show all                with C-c ;
+;; allow to easily show / hide outlines 
+;;     - toggle block visibility with C-c j
+;;     - hide all                with C-c l
+;;     - show all                with C-c ;
 
 (require 'fold-dwim)
 (global-set-key (kbd "C-c j") 'fold-dwim-toggle)
