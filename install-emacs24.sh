@@ -70,7 +70,7 @@ tee "$EM_DIR"/init.el <<EOF
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings clojure-mode midje-mode multi-term switch-window slime)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings clojure-mode midje-mode multi-term switch-window slime fold-dwim)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -131,6 +131,18 @@ tee "$EM_DIR"/init.el <<EOF
 
 (global-set-key (kbd "C-c C-j") 'term-line-mode)
 
+;; ===================================================================
+;;                           dwim-fold
+;; ===================================================================
+
+;; allow to easily toggle block visibility with C-c j
+;;                 hide all                with C-c l
+;;                 show all                with C-c ;
+
+(require 'fold-dwim)
+(global-set-key (kbd "C-c j") 'fold-dwim-toggle)
+(global-set-key (kbd "C-c l") 'fold-dwim-hide-all)
+(global-set-key (kbd "C-c ;") 'fold-dwim-show-all)
 
 EOF
 
