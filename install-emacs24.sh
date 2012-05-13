@@ -145,6 +145,21 @@ tee "$EM_DIR"/init.el <<EOF
 (global-set-key (kbd "C-c l") 'fold-dwim-hide-all)
 (global-set-key (kbd "C-c ;") 'fold-dwim-show-all)
 
+;; ===================================================================
+;;                    find-file-in-project
+;; ===================================================================
+
+(eval-after-load 'find-file-in-project
+  '(progn
+     ;; add 'entreprise' files patterns (cough!)
+     (setq ffip-patterns
+           (append ffip-patterns
+                   '("*.css" "*.csv" "*.htm" "*.java" "*.js" "*.json"
+                     "*.jsp" "*.php" "*.properties" "*.sql" "*.xml")))
+     ;; increase the max number of files, otherwise some files will be
+     ;; 'unfindable' on big projects
+     (setq ffip-limit 2048)))
+
 EOF
 
 
