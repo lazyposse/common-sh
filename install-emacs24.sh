@@ -154,7 +154,7 @@ tee "$EM_DIR"/init.el <<EOF
      ;; add 'entreprise' files patterns (cough!)
      (setq ffip-patterns
            (append ffip-patterns
-                   '("*.css" "*.csv" "*.htm" "*.java" "*.js" "*.json"
+                   '("*.css" "*.csv" "*.htm" "*.java" "*.json"
                      "*.jsp" "*.php" "*.properties" "*.sql" "*.xml")))
      ;; increase the max number of files, otherwise some files will be
      ;; 'unfindable' on big projects
