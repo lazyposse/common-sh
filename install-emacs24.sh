@@ -19,9 +19,9 @@ then
   exit 1;
 fi
 
-sudo apt-get install python-software-properties
+sudo apt-get install -y python-software-properties
 
-sudo add-apt-repository ppa:cassou/emacs
+sudo add-apt-repository -y ppa:cassou/emacs
 
 sudo tee -a /etc/apt/sources.list <<EOF
 
@@ -32,7 +32,7 @@ EOF
 
 sudo apt-get update
 
-yes | sudo apt-get install emacs-snapshot
+sudo apt-get install -y emacs-snapshot
 
 emacs --version
 
@@ -46,8 +46,8 @@ then
   echo;
   echo "    Do you want to archive $EM_DIR to $EM_BAK?";
   select YN in yes no;
-  do 
-      if [ $YN = "yes" ]; 
+  do
+      if [ $YN = "yes" ];
           then mv -v "$EM_DIR" "$EM_BAK"; break;
           else echo "Exiting..."        ; exit 1;
       fi
@@ -81,7 +81,7 @@ tee "$EM_DIR"/init.el <<EOF
 ;;                             General
 ;; ===================================================================
 
-;; font 
+;; font
 (set-default-font "Inconsolata-11")
 
 ;; ===================================================================
@@ -120,8 +120,8 @@ tee "$EM_DIR"/init.el <<EOF
 
 ;; prevent slime to crash when encountering non ascii char
 
-(set-language-environment "UTF-8") 
-(setq slime-net-coding-system 'utf-8-unix) 
+(set-language-environment "UTF-8")
+(setq slime-net-coding-system 'utf-8-unix)
 
 ;; ===================================================================
 ;;                            multi-term
@@ -135,7 +135,7 @@ tee "$EM_DIR"/init.el <<EOF
 ;;                      dwim-fold (outline in emacs)
 ;; ===================================================================
 
-;; allow to easily show / hide outlines 
+;; allow to easily show / hide outlines
 ;;     - toggle block visibility with C-c j
 ;;     - hide all                with C-c l
 ;;     - show all                with C-c ;
