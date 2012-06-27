@@ -160,6 +160,35 @@ tee "$EM_DIR"/init.el <<EOF
      ;; 'unfindable' on big projects
      (setq ffip-limit 2048)))
 
+;; ===================================================================
+;;                    lower/upper case
+;; ===================================================================
+
+;; C-x C-l
+(put 'downcase-region 'disabled nil)
+;; C-x C-u
+(put 'upcase-region 'disabled nil)
+
+;; ===================================================================
+;;                    clojure-mode / slime
+;; ===================================================================
+
+(require 'clojure-mode)
+(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+(require 'midje-mode)
+(add-hook 'clojure-mode-hook 'midje-mode)
+(add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
+
+; add color into the repl via clojure-jack-in
+(add-hook 'slime-repl-mode-hook
+(defun clojure-mode-slime-font-lock ()
+(let (font-lock-mode)
+(clojure-mode-font-lock-setup))))
+
+(add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
+
+(add-to-list 'auto-mode-alist '("\.cljs$" . clojure-mode))
+
 EOF
 
 
