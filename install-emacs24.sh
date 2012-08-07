@@ -160,6 +160,17 @@ tee "$EM_DIR"/init.el <<EOF
      ;; 'unfindable' on big projects
      (setq ffip-limit 2048)))
 
+
+;; ===================================================================
+;;                  enable to lower / to upper case
+;; ===================================================================
+
+;; C-x C-l
+(put 'downcase-region 'disabled nil)
+
+;; C-x C-u
+(put 'upcase-region 'disabled nil)
+
 EOF
 
 
