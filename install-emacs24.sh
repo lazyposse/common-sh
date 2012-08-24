@@ -31,13 +31,6 @@ sudo apt-get install -y python-software-properties
 
 sudo add-apt-repository -y ppa:cassou/emacs
 
-sudo tee -a /etc/apt/sources.list <<EOF
-
-# For Emacs 24
-deb http://ppa.launchpad.net/cassou/emacs/ubuntu $DISTRIB_CODENAME main
-deb-src http://ppa.launchpad.net/cassou/emacs/ubuntu $DISTRIB_CODENAME main
-EOF
-
 sudo apt-get update
 
 sudo apt-get install -y emacs-snapshot
