@@ -19,20 +19,25 @@ then
   exit 1;
 fi
 
+#                       start from a clean state
+#
+# see https://launchpad.net/~cassou/+archive/emacs
+#
+sudo apt-get -y update
+sudo apt-get -y install
+sudo apt-get -y purge emacs-snapshot-common emacs-snapshot-bin-common emacs-snapshot emacs-snapshot-el emacs-snapshot-gtk emacs23 emacs23-bin-common emacs23-common emacs23-el emacs23-nox emacs23-lucid auctex emacs24 emacs24-bin-common emacs24-common
+
+
+#                      install add-apt-repository
+#               (not present in old versions like lucid)
+#
 sudo apt-get install -y python-software-properties
 
-sudo add-apt-repository -y ppa:cassou/emacs
-
-sudo tee -a /etc/apt/sources.list <<EOF
-
-# For Emacs 24
-deb http://ppa.launchpad.net/cassou/emacs/ubuntu $DISTRIB_CODENAME main
-deb-src http://ppa.launchpad.net/cassou/emacs/ubuntu $DISTRIB_CODENAME main
-EOF
-
-sudo apt-get update
-
-sudo apt-get install -y emacs-snapshot
+#                        install emacs24-stable
+#
+yes | sudo add-apt-repository ppa:cassou/emacs
+sudo apt-get -y update
+sudo apt-get -y install emacs24 emacs24-el
 
 emacs --version
 
