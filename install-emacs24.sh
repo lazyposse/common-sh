@@ -21,7 +21,9 @@ fi
 
 sudo apt-get install -y python-software-properties
 
-sudo add-apt-repository -y ppa:cassou/emacs
+# dont use the '-y' option because it doesnt exists on old versions (eg:
+# ubuntu lucid)
+yes | sudo add-apt-repository ppa:cassou/emacs
 
 sudo tee -a /etc/apt/sources.list <<EOF
 
