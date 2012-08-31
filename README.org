@@ -14,7 +14,7 @@ Common Shell scripts for everyday use
 ** Usage
 
 #+BEGIN_SRC sh
-wget https://raw.github.com/denlab/common-sh/master/install-chrome.sh
+wget https://raw.github.com/lazyposse/common-sh/master/install-chrome.sh
 chmod +x install-chrome.sh
 ./install-chrome.sh
 
