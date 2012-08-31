@@ -21,7 +21,7 @@ fi
 
 sudo apt-get install -y python-software-properties
 
-sudo add-apt-repository -y ppa:cassou/emacs
+yes | sudo add-apt-repository ppa:cassou/emacs
 
 sudo tee -a /etc/apt/sources.list <<EOF
 
@@ -70,7 +70,7 @@ tee "$EM_DIR"/init.el <<EOF
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings clojure-mode midje-mode multi-term switch-window slime fold-dwim)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings clojure-mode multi-term switch-window slime fold-dwim)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
