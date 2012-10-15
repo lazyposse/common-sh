@@ -70,7 +70,8 @@ tee "$EM_DIR"/init.el <<EOF
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings clojure-mode multi-term switch-window slime fold-dwim)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings clojure-mode clojure-test-mode multi-term switch-window slime fold-dwim
+                                  htmlize)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -82,7 +83,7 @@ tee "$EM_DIR"/init.el <<EOF
 ;; ===================================================================
 
 ;; font
-(set-default-font "Inconsolata-11")
+(set-default-font "Inconsolata-10")
 
 ;; ===================================================================
 ;;                             org-mode
@@ -160,7 +161,6 @@ tee "$EM_DIR"/init.el <<EOF
      ;; 'unfindable' on big projects
      (setq ffip-limit 2048)))
 
-
 ;; ===================================================================
 ;;                  enable to lower / to upper case
 ;; ===================================================================
@@ -170,6 +170,12 @@ tee "$EM_DIR"/init.el <<EOF
 
 ;; C-x C-u
 (put 'upcase-region 'disabled nil)
+
+;; ===================================================================
+;;                start the emacs server at startup
+;; ===================================================================
+
+(server-mode)
 
 EOF
 
