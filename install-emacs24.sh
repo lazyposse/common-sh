@@ -70,7 +70,8 @@ tee "$EM_DIR"/init.el <<EOF
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings clojure-mode multi-term switch-window slime fold-dwim)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings clojure-mode multi-term switch-window slime fold-dwim
+                      htmlize)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
