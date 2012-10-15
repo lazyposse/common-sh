@@ -161,7 +161,6 @@ tee "$EM_DIR"/init.el <<EOF
      ;; 'unfindable' on big projects
      (setq ffip-limit 2048)))
 
-
 ;; ===================================================================
 ;;                  enable to lower / to upper case
 ;; ===================================================================
@@ -171,6 +170,12 @@ tee "$EM_DIR"/init.el <<EOF
 
 ;; C-x C-u
 (put 'upcase-region 'disabled nil)
+
+;; ===================================================================
+;;                start the emacs server at startup
+;; ===================================================================
+
+(server-mode)
 
 EOF
 
